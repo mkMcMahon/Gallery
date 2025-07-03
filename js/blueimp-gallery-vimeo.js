@@ -9,23 +9,13 @@
  * https://opensource.org/licenses/MIT
  */
 
-/* global define, $f */
+/* global $f */
 
-;(function (factory) {
-  'use strict'
-  if (typeof define === 'function' && define.amd) {
-    // Register as an anonymous AMD module:
-    define(['./blueimp-helper', './blueimp-gallery-video'], factory)
-  } else {
-    // Browser globals:
-    factory(window.blueimp.helper || window.jQuery, window.blueimp.Gallery)
-  }
-})(function ($, Gallery) {
-  'use strict'
+import $ from './blueimp-helper.js'
+import Gallery from './blueimp-gallery-video.js'
+'use strict'
 
-  if (!window.postMessage) {
-    return Gallery
-  }
+if (window.postMessage) {
 
   var galleryPrototype = Gallery.prototype
 
@@ -207,6 +197,6 @@
       return textFactory.call(this, obj, callback)
     }
   })
+}
 
-  return Gallery
-})
+export default Gallery
