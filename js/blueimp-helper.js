@@ -9,12 +9,9 @@
  * https://opensource.org/licenses/MIT
  */
 
-/* global define */
-
 /* eslint-disable no-param-reassign */
 
-;(function () {
-  'use strict'
+'use strict'
 
   /**
    * Object.assign polyfill
@@ -206,12 +203,4 @@
     }
   })
 
-  if (typeof define === 'function' && define.amd) {
-    define(function () {
-      return Helper
-    })
-  } else {
-    window.blueimp = window.blueimp || {}
-    window.blueimp.helper = Helper
-  }
-})()
+export default Helper

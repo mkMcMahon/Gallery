@@ -9,17 +9,9 @@
  * https://opensource.org/licenses/MIT
  */
 
-/* global define */
-
-;(function (factory) {
-  'use strict'
-  if (typeof define === 'function' && define.amd) {
-    define(['jquery', './blueimp-gallery'], factory)
-  } else {
-    factory(window.jQuery, window.blueimp.Gallery)
-  }
-})(function ($, Gallery) {
-  'use strict'
+import $ from 'jquery'
+import Gallery from './blueimp-gallery.js'
+'use strict'
 
   // Global click handler to open links with data-gallery attribute
   // in the Gallery lightbox:
@@ -72,4 +64,4 @@
     }
     return new Gallery(links, options)
   })
-})
+export default Gallery

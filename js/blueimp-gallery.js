@@ -12,22 +12,12 @@
  * https://opensource.org/licenses/MIT
  */
 
-/* global define, DocumentTouch */
+/* global DocumentTouch */
 
 /* eslint-disable no-param-reassign */
 
-;(function (factory) {
-  'use strict'
-  if (typeof define === 'function' && define.amd) {
-    // Register as an anonymous AMD module:
-    define(['./blueimp-helper'], factory)
-  } else {
-    // Browser globals:
-    window.blueimp = window.blueimp || {}
-    window.blueimp.Gallery = factory(window.blueimp.helper || window.jQuery)
-  }
-})(function ($) {
-  'use strict'
+import $ from './blueimp-helper.js'
+'use strict'
 
   /**
    * Gallery constructor
@@ -1547,5 +1537,4 @@
     }
   })
 
-  return Gallery
-})
+export default Gallery
